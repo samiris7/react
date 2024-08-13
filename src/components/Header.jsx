@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Lund from '../pages/Contact'
 const Header = () => {
   return (
-    <div className='flex bg-blue-500 from-neutral-50  justify-between pl-4 h-16 text-2xl align-middle pt-2'>
+    <div className='flex bg-blue-500 from-neutral-50  justify-between pl-4 h-16 text-2xl align-middle pt-2 '>
 
 
 
