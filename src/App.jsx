@@ -24,10 +24,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import Aboutpage from './pages/Aboutpage'
 import Contact from './pages/Contact'
-import Sample1 from './pages/Sample1'
-import Sample2 from './pages/Sample2'
-import Random from './pages/Random'
-import Another from './pages/Another'
+
 import Rootlayout from './components/Rootlayout'
 
 
