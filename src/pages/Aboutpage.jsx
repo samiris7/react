@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const Aboutpage = () => {
   return (
-    <div className=" bg-black text-white">
+    <div className=" text-black">
       <div className="bg-[url('https://image.slidesdocs.com/responsive-images/background/lines-abstract-simple-education-planners-asymmetry-powerpoint-background_da3e00f7b2__960_540.jpg')] bg-cover mx-64 ">
         <h1 className='font-bold text-xl ml-96'>This is about me</h1>
         <p >

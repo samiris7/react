@@ -17,8 +17,8 @@ const Who = () => {
 
           Tel:+97790000000</p></div>
       </div>
-      <footer className='flex justify-end mr-6'>
-        ©John wick
+      <footer className='flex justify-end pr-6 bg-slate-500'>
+        <h1 > All rights reserved  2024 ©John wick</h1>
       </footer>
     </div>
   )
