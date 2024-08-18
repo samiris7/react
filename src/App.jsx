@@ -34,24 +34,24 @@ const App = () => {
     {
       path: '/',
       element: <Rootlayout />,
-      children: [
-        {
-          index: true,
-          element: <HomePage />
-        },
-        {
-          path: 'about-page',
-          element: <Aboutpage />,
+      // children: [
+      //   {
+      //     index: true,
+      //     element: <HomePage />
+      //   },
+      //   {
+      //     path: 'about-page',
+      //     element: <Aboutpage />,
 
 
-        },
-        {
-          path: 'contact-page',
-          element: <Contact />,
+      //   },
+      //   {
+      //     path: 'contact-page',
+      //     element: <Contact />,
 
 
-        }
-      ]
+      //   }
+      // ]
     }
   ])
   return <RouterProvider router={router} />
