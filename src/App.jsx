@@ -40,7 +40,7 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <Header />
+          element: <Contact />
         },
         {
           path: 'card',
@@ -49,7 +49,7 @@ const App = () => {
 
         },
         {
-          path: 'contact-page',
+          path: 'homepage',
           element: <HomePage />,
 
 

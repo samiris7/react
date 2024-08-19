@@ -8,9 +8,9 @@ const Header = () => {
 
       <NavLink className=' px-2 h-12 hover:bg-red-950 rounded-2xl' >Demo</NavLink>
 
-      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'card'}>card</NavLink>
+      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'card'}>Card</NavLink>
 
-      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'homepage'}> Contact</NavLink>
+      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'homepage'}> Crad</NavLink>
 
     </div>
 

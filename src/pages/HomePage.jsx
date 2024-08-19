@@ -1,7 +1,4 @@
 import React from 'react'
-import { RiTailwindCssFill } from 'react-icons/ri'
-import { RxDotFilled } from 'react-icons/rx'
-import Header from '../components/Header'
 import { Outlet } from 'react-router'
 
 
