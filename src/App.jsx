@@ -26,6 +26,8 @@ import Aboutpage from './pages/Aboutpage'
 import Contact from './pages/Contact'
 
 import Rootlayout from './components/Rootlayout'
+import Card from './pages/Card'
+import Header from './components/Header'
 
 
 
@@ -34,25 +36,27 @@ const App = () => {
     {
       path: '/',
       element: <Rootlayout />,
-      // children: [
-      //   {
-      //     index: true,
-      //     element: <HomePage />
-      //   },
-      //   {
-      //     path: 'about-page',
-      //     element: <Aboutpage />,
+
+      children: [
+        {
+          index: true,
+          element: <Header />
+        },
+        {
+          path: 'card',
+          element: <Card />,
 
 
-      //   },
-      //   {
-      //     path: 'contact-page',
-      //     element: <Contact />,
+        },
+        {
+          path: 'contact-page',
+          element: <HomePage />,
 
 
-      //   }
-      // ]
+        }
+      ]
     }
+
   ])
   return <RouterProvider router={router} />
 }

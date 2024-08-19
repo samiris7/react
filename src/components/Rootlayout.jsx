@@ -1,13 +1,15 @@
 import React from 'react'
 import HomePage from '../pages/HomePage'
+import Header from './Header'
+import { Outlet } from 'react-router'
 
 
 
 const Rootlayout = () => {
   return (
     <div>
-      <HomePage />
-
+      <Header />
+      {/* <Outlet /> */}
     </div>
   )
 }
