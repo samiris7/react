@@ -21,13 +21,11 @@
 // export default App
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import Aboutpage from './pages/Aboutpage'
-import Contact from './pages/Contact'
+
 
 import Rootlayout from './components/Rootlayout'
-import Card from './pages/Card'
-import Header from './components/Header'
+import HomePage from './pages/HomePage'
+
 
 
 
@@ -35,26 +33,8 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Rootlayout />,
+      element: <HomePage />,
 
-      children: [
-        {
-          index: true,
-          element: <Header />
-        },
-        {
-          path: 'card',
-          element: <Card />,
-
-
-        },
-        {
-          path: 'contact-page',
-          element: <HomePage />,
-
-
-        }
-      ]
     }
 
   ])
