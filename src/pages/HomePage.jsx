@@ -101,7 +101,7 @@ const HomePage = () => {
     const obj = {
 
       id: 'bitch',
-      location: ' chandre machikne bhaku randi besya randikoban',
+      location: ' chandre machikne bhalu randi besya randikoban',
       user: '1'
 
     };
