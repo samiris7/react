@@ -1,45 +1,49 @@
-// import React from 'react'
-// import { age, func } from './app_data/data';
-// import HomePage from './pages/HomePage';
-// import Contact from './pages/Contact';
-
-
-// const App = () => {
-
-//   return (
-//     <div>
-//       <HomePage />
-//       <Contact />
-
-
-
-
-//     </div>
-//   )
-// }
-
-// export default App
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
-
-import Rootlayout from './components/Rootlayout'
-import HomePage from './pages/HomePage'
-
-
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import RootLayout from './components/Rootlayout';
+import ItemsPages from './components/ItemPages';
+import AboutPage from './pages/app_data/AboutPage';
+import ContactPage from './pages/app_data/ContactPage';
+import HomePage from './components/HomePage';
 
 
 const App = () => {
+
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage />,
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />
+        },
+        {
+          path: 'items/:Random',
+          element: <ItemsPages />
+        },
+        // {
+        //   path: 'item-detail/:id',
+        //   element: <ItemDetail />
+        // },
+        {
+          path: 'about-page',
+          element: <AboutPage />
+        },
+        {
+          path: 'contact-page',
+          element: <ContactPage />
+        }
+      ]
+    },
 
-    }
 
-  ])
+
+  ]);
+
+
+
   return <RouterProvider router={router} />
 }
 
 export default App
-

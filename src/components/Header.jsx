@@ -1,23 +1,16 @@
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 const Header = () => {
   return (
-    <div className='flex bg-blue-500 from-neutral-50  justify-between pl-4 h-16 text-2xl align-middle pt-2 '>
+    <div className='bg-black text-white px-5 py-2 flex justify-between'>
+      <h1>WeboLogo</h1>
 
-
-
-      <NavLink className=' px-2 h-12 hover:bg-red-950 rounded-2xl' >Demo</NavLink>
-
-      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'card'}>card</NavLink>
-
-      <NavLink className='px-2 h-12 hover:bg-red-950 rounded-2xl' to={'homepage'}> Contact</NavLink>
-
+      <nav className='space-x-4'>
+        <NavLink to={'/about-page'}>About</NavLink>
+        <NavLink to={'/contact-page'}>Contact</NavLink>
+      </nav>
     </div>
-
-
-
-
-
   )
 }
 
