@@ -1,46 +1,16 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import RootLayout from './components/Rootlayout';
-import ItemsPages from './components/ItemPages';
-import AboutPage from './pages/app_data/AboutPage';
-import ContactPage from './pages/app_data/ContactPage';
-import HomePage from './components/HomePage';
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import HomePage from './pages/HomePage'
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <RootLayout />,
-      children: [
-        {
-          index: true,
-          element: <HomePage />
-        },
-        {
-          path: 'items/:Random',
-          element: <ItemsPages />
-        },
-        // {
-        //   path: 'item-detail/:id',
-        //   element: <ItemDetail />
-        // },
-        {
-          path: 'about-page',
-          element: <AboutPage />
-        },
-        {
-          path: 'contact-page',
-          element: <ContactPage />
-        }
-      ]
-    },
+      element: <HomePage />,
 
+    }
 
-
-  ]);
-
+  ])
 
 
   return <RouterProvider router={router} />
