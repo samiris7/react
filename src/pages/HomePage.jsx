@@ -1,68 +1,59 @@
-// import axios from 'axios';
-// import React, { useEffect, useState } from 'react'
-// import ListCard from './ListCard';
-
-// const HomePage = () => {
-//   const [data, SetData] = useState();
-//   const getData = async () => {
-//     try {
-//       const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-//       SetData(response.data);
-
-
-//     }
-//     catch (err) {
-
-//     }
-//   }
-//   useEffect(() => {
-//     getData();
-//   }, []);
-
-//   return (
-//     <div>
-//       {data && <ListCard categories={data.categories} />}
-//     </div>
-//   )
-// }
-
-// export default HomePage
-
-
-import React, { useState } from 'react';
-import useApihooks from '../components/Apihooks';
-import ListCard from './ListCard';
-import { button } from '@material-tailwind/react';
+import { Button } from '@material-tailwind/react';
+import axios from 'axios';
+import React from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react'
+import { useParams } from 'react-router';
 
 const HomePage = () => {
-  const [toggle, setToggle] = useState(false);
-  const getval = () => {
-    setToggle((perv) => !toggle)
+  const [page, setpage] = useState(1)
+  const [data, setData] = useState();
+  const getData = async () => {
+    try {
+      const response = await axios.get('https://api.themoviedb.org/3/movie/now_playing', {
+        params: {
+          page: page
+        },
+        headers: {
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2M2Y0NWI2MzQwNjQ5Zjk3NmNmZWZjNTVhYmE3YTAyMCIsIm5iZiI6MTcyNjY1Nzc0Mi4yNTMwMzYsInN1YiI6IjY2ZTlhNjAxMWJlY2E4Y2UwN2QyZjUyNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7anfV8hGXNIJLIFhcdCYwwvA8J8y-AqlULJ-M2GlUZU'
+        }
+      });
+      setData(response.data);
+      console.log(response.data);
+    } catch (err) {
+
+    }
   }
-
-  console.log(toggle);
-
-  const data = useApihooks('https://jsonplaceholder.typicode.com/albums');
+  useEffect(() => {
+    getData();
+  }, [page]);
+  console.log(data);
 
   return (
+    <div className=' grid grid-cols-4' >
+      {data?.results?.map((item) => {
+        return (
+          <div key={item.id} className=" bg-white  my-2">
 
-    <div className='grid grid-cols-1 gap-2 m-2   '>
+            <div className=""><h1>{item.title}</h1>
+              <img className='w-[200px]' src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="" />
+
+              <Button className='rounded-none px-5 py-1'>{item.release_date}</Button></div>
 
 
+          </div>
+        )
+      })}
 
-      <button className='' onClick={getval}>Click Here
-        <div className=" ">
-          {toggle ? <div className="">{data && data.map((photo, i) => {
-            return <ListCard key={photo.id || i} photo={photo} />
-          })}
-          </div> : null}
-        </div>
+      <div className=" w-full flex justify-evenly">
 
-      </button>
-
+        <Button disabled={(page === 1)} onClick={() => setpage(page - 1)}>Previous </Button>
+        <h1 className='font-bold text-xl'>{data && data.page}</h1>
+        <Button onClick={() => setpage(page + 1)}>Next </Button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default HomePage;
-
+export default HomePage

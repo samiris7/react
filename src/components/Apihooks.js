@@ -3,22 +3,20 @@ import React, { useEffect, useState } from 'react'
 
 const useApihooks = (url) => {
 
-  const [data, SetData] = useState();
-
+  const [data, setData] = useState();
   const getData = async () => {
     try {
       const response = await axios.get(url);
-      SetData(response.data);
+      setData(response.data);
+
     } catch (err) {
 
     }
+
   }
   useEffect(() => {
     getData();
-
-  }, [])
+  }, [url])
   return data;
-
 }
-
-export default useApihooks
+export default useApihooks;
