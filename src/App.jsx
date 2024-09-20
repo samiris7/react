@@ -5,12 +5,13 @@ import Header from './components/Header'
 import About from './components/About'
 import Contact from './components/Contact'
 import Rootlayout from './pages/app_data/Rootlayout'
+import Home from './pages/Home'
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage />,
+      element: <Home />,
       children: [
 
         {
